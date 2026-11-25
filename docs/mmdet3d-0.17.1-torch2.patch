@@ -1,0 +1,77 @@
+diff --git a/mmdet3d/datasets/pipelines/data_augment_utils.py b/mmdet3d/datasets/pipelines/data_augment_utils.py
+index 23b6aad..554d90c 100644
+--- a/mmdet3d/datasets/pipelines/data_augment_utils.py
++++ b/mmdet3d/datasets/pipelines/data_augment_utils.py
+@@ -5 +5 @@ import warnings
+-from numba.errors import NumbaPerformanceWarning
++from numba.core.errors import NumbaPerformanceWarning
+diff --git a/mmdet3d/ops/ball_query/src/ball_query.cpp b/mmdet3d/ops/ball_query/src/ball_query.cpp
+index 6e9d5f7..d851858 100644
+--- a/mmdet3d/ops/ball_query/src/ball_query.cpp
++++ b/mmdet3d/ops/ball_query/src/ball_query.cpp
+@@ -4 +4 @@
+-#include <THC/THC.h>
++#include <ATen/cuda/CUDAContext.h>
+@@ -12,2 +11,0 @@
+-extern THCState *state;
+-
+diff --git a/mmdet3d/ops/furthest_point_sample/src/furthest_point_sample.cpp b/mmdet3d/ops/furthest_point_sample/src/furthest_point_sample.cpp
+index be05890..3bfcb33 100644
+--- a/mmdet3d/ops/furthest_point_sample/src/furthest_point_sample.cpp
++++ b/mmdet3d/ops/furthest_point_sample/src/furthest_point_sample.cpp
+@@ -5 +4,0 @@
+-#include <THC/THC.h>
+@@ -11,2 +9,0 @@
+-extern THCState *state;
+-
+diff --git a/mmdet3d/ops/gather_points/src/gather_points.cpp b/mmdet3d/ops/gather_points/src/gather_points.cpp
+index 01a3e40..65e3b89 100644
+--- a/mmdet3d/ops/gather_points/src/gather_points.cpp
++++ b/mmdet3d/ops/gather_points/src/gather_points.cpp
+@@ -2 +1,0 @@
+-#include <THC/THC.h>
+@@ -8,2 +6,0 @@
+-extern THCState *state;
+-
+diff --git a/mmdet3d/ops/group_points/src/group_points.cpp b/mmdet3d/ops/group_points/src/group_points.cpp
+index 3cd6fc8..9ebb34d 100644
+--- a/mmdet3d/ops/group_points/src/group_points.cpp
++++ b/mmdet3d/ops/group_points/src/group_points.cpp
+@@ -4 +4 @@
+-#include <THC/THC.h>
++#include <ATen/cuda/CUDAContext.h>
+@@ -12,2 +11,0 @@
+-extern THCState *state;
+-
+diff --git a/mmdet3d/ops/interpolate/src/interpolate.cpp b/mmdet3d/ops/interpolate/src/interpolate.cpp
+index 6382579..8827a12 100644
+--- a/mmdet3d/ops/interpolate/src/interpolate.cpp
++++ b/mmdet3d/ops/interpolate/src/interpolate.cpp
+@@ -4 +4 @@
+-#include <THC/THC.h>
++#include <ATen/cuda/CUDAContext.h>
+@@ -15,2 +14,0 @@
+-extern THCState *state;
+-
+diff --git a/mmdet3d/ops/knn/src/knn.cpp b/mmdet3d/ops/knn/src/knn.cpp
+index 84ddf4b..5495744 100644
+--- a/mmdet3d/ops/knn/src/knn.cpp
++++ b/mmdet3d/ops/knn/src/knn.cpp
+@@ -6 +5,0 @@
+-#include <THC/THC.h>
+@@ -9,2 +7,0 @@
+-extern THCState *state;
+-
+diff --git a/requirements/runtime.txt b/requirements/runtime.txt
+index f0e7ae4..be76883 100644
+--- a/requirements/runtime.txt
++++ b/requirements/runtime.txt
+@@ -2,4 +2,4 @@ lyft_dataset_sdk
+-networkx>=2.2,<2.3
+-# we may unlock the verion of numba in the future
+-numba==0.48.0
+-numpy<1.20.0
++networkx==3.1
++# Tested compatibility set for Python 3.8, PyTorch 2.0.1 and CUDA 11.8.
++numba==0.57.1
++numpy==1.23.5
