@@ -9,7 +9,7 @@ Tested on **Ubuntu 22.04 (x86_64), NVIDIA H20**, with Python 3.8.20, PyTorch 2.0
 ### 1. Create and activate the environment
 
 ```bash
-git clone https://github.com/Forgotten0116/STIP.git
+git clone https://github.com/JingSC-Lab/STIP.git
 cd STIP
 conda create -n stip -y --file docs/stip-conda-linux-64.lock.txt
 conda activate stip
